@@ -7,6 +7,7 @@ use wcf\data\comment\response\CommentResponseList;
 use wcf\data\comment\CommentList;
 use wcf\data\object\type\ObjectTypeCache;
 use wcf\system\cache\runtime\UserProfileRuntimeCache;
+use wcf\system\cache\runtime\ViewableArticleRuntimeCache;
 use wcf\system\like\IViewableLikeProvider;
 use wcf\system\WCF;
 
@@ -207,5 +208,13 @@ class ArticleCommentManager extends AbstractCommentManager implements IViewableL
 				}
 			}
 		}
+	}
+	
+	/**
+	 * @inheritDoc
+	 */
+	public function isContentAuthor($commentOrResponse) {
+		$article = ViewableArticleRuntimeCache::getInstance()->getObject($this->getObjectID($commentOrResponse));
+		return $commentOrResponse->userID && $article->userID == $commentOrResponse->userID;
 	}
 }

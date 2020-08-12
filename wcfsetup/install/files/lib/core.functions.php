@@ -17,6 +17,16 @@ namespace {
 	// set autoload function
 	spl_autoload_register([WCF::class, 'autoload']);
 	
+	spl_autoload_register(function ($className) {
+		/**
+		 * @deprecated 5.3 This file is a compatibility layer mapping from Leafo\\ to ScssPhp\\
+		 */
+		$leafo = 'Leafo\\';
+		if (substr($className, 0, strlen($leafo)) === $leafo) {
+			class_alias('ScssPhp\\'.substr($className, strlen($leafo)), $className, true);
+		}
+	});
+	
 	/**
 	 * Escapes a string for use in sql query.
 	 * 
@@ -141,7 +151,7 @@ namespace wcf\functions\exception {
 			$message .= "======\n".
 			'Error Class: '.get_class($prev)."\n".
 			'Error Message: '.$stripNewlines($prev->getMessage())."\n".
-			'Error Code: '.intval($prev->getCode())."\n".
+			'Error Code: '.$stripNewlines($prev->getCode())."\n".
 			'File: '.$stripNewlines($prev->getFile()).' ('.$prev->getLine().')'."\n".
 			'Extra Information: '.($prev instanceof IExtraInformationException ? base64_encode(serialize($prev->getExtraInformation())) : '-')."\n".
 			'Stack Trace: '.json_encode(array_map(function ($item) {
@@ -499,7 +509,7 @@ EXPLANATION;
 							<?php if ($e->getCode()) { ?>
 								<li>
 									<p class="exceptionFieldTitle">Error Code<span class="exceptionColon">:</span></p>
-									<p class="exceptionFieldValue"><?php echo intval($e->getCode()); ?></p>
+									<p class="exceptionFieldValue"><?php echo StringUtil::encodeHTML($e->getCode()); ?></p>
 								</li>
 							<?php } ?>
 							<li>

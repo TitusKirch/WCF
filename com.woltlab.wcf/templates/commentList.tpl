@@ -10,7 +10,7 @@
 			data-comment-id="{@$comment->commentID}"
 			{@$__wcf->getReactionHandler()->getDataAttributes('com.woltlab.wcf.comment', $comment->commentID)}
 			data-can-edit="{if $comment->isEditable()}true{else}false{/if}" data-can-delete="{if $comment->isDeletable()}true{else}false{/if}"
-			data-responses="{@$comment->responses}" data-last-response-time="{if $commentLastResponseTime|empty}{@$comment->getLastResponseTime()}{else}{@$commentLastResponseTime}{/if}" data-user-id="{@$comment->userID}" data-is-disabled="{@$comment->isDisabled}"
+			data-responses="{@$comment->responses}" data-last-response-time="{if $commentLastResponseTime|empty}{@$comment->getLastResponseTime()}{else}{@$commentLastResponseTime}{/if}" data-is-disabled="{@$comment->isDisabled}"
 		>
 			<div class="box48{if $__wcf->getUserProfileHandler()->isIgnoredUser($comment->userID)} ignoredUserContent{/if}">
 				{if $comment->userID}
@@ -37,6 +37,10 @@
 								
 								{if $comment->isDisabled}
 									<span class="badge label green jsIconDisabled">{lang}wcf.message.status.disabled{/lang}</span>
+								{/if}
+								
+								{if $commentManager->isContentAuthor($comment)}
+									<span class="badge label">{lang}wcf.comment.objectAuthor{/lang}</span>
 								{/if}
 							</h3>
 						</div>

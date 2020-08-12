@@ -515,17 +515,16 @@ function handleException($e) {
  * @throws	SystemException
  */
 function handleError($errorNo, $message, $filename, $lineNo) {
-	if (error_reporting() != 0) {
-		$type = 'error';
-		switch ($errorNo) {
-			case 2: $type = 'warning';
-				break;
-			case 8: $type = 'notice';
-				break;
-		}
-		
-		throw new SystemException('PHP '.$type.' in file '.$filename.' ('.$lineNo.'): '.$message, 0);
+	if (!(error_reporting() & $errorNo)) return;
+	$type = 'error';
+	switch ($errorNo) {
+		case 2: $type = 'warning';
+			break;
+		case 8: $type = 'notice';
+			break;
 	}
+	
+	throw new SystemException('PHP '.$type.' in file '.$filename.' ('.$lineNo.'): '.$message, 0);
 }
 
 if (!function_exists('is_countable')) {
@@ -930,14 +929,10 @@ class Tar {
 		$this->file->seek($header['offset']);
 		
 		// read data
-		$content = '';
-		$n = floor($header['size'] / 512);
-		for ($i = 0; $i < $n; $i++) {
-			$content .= $this->file->read(512);
-		}
-		if (($header['size'] % 512) != 0) {
-			$buffer = $this->file->read(512);
-			$content .= substr($buffer, 0, $header['size'] % 512);
+		$content = $this->file->read($header['size']);
+		
+		if (strlen($content) != $header['size']) {
+			throw new SystemException("Could not untar file '".$header['filename']."' to string. Maybe the archive is truncated?");
 		}
 		
 		return $content;

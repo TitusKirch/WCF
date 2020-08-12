@@ -368,9 +368,25 @@ class WCF {
 		define('LIKE_ALLOW_FOR_OWN_CONTENT', 0);
 		define('LIKE_ENABLE_DISLIKE', 0);
 		
+		// Thumbnails for attachments are already enabled since 5.3.
+		// https://github.com/WoltLab/WCF/pull/3444
+		define('ATTACHMENT_ENABLE_THUMBNAILS', 1);
+		
 		// User markings are always applied in sidebars since 5.3.
 		// https://github.com/WoltLab/WCF/issues/3330
 		define('MESSAGE_SIDEBAR_ENABLE_USER_ONLINE_MARKING', 1);
+		
+		// Password strength configuration is deprecated since 5.3.
+		define('REGISTER_ENABLE_PASSWORD_SECURITY_CHECK', 0);
+		define('REGISTER_PASSWORD_MIN_LENGTH', 0);
+		define('REGISTER_PASSWORD_MUST_CONTAIN_LOWER_CASE', 8);
+		define('REGISTER_PASSWORD_MUST_CONTAIN_UPPER_CASE', 0);
+		define('REGISTER_PASSWORD_MUST_CONTAIN_DIGIT', 0);
+		define('REGISTER_PASSWORD_MUST_CONTAIN_SPECIAL_CHAR', 0);
+
+		// rel=nofollow is always applied to external link since 5.3
+		// https://github.com/WoltLab/WCF/issues/3339
+		define('EXTERNAL_LINK_REL_NOFOLLOW', 1);
 		
 		$filename = WCF_DIR.'options.inc.php';
 		

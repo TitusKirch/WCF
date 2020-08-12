@@ -442,11 +442,6 @@
 				<optiontype>boolean</optiontype>
 				<defaultvalue>1</defaultvalue>
 			</option>
-			<option name="external_link_rel_nofollow">
-				<categoryname>general.page</categoryname>
-				<optiontype>boolean</optiontype>
-				<defaultvalue>1</defaultvalue>
-			</option>
 			<option name="external_link_target_blank">
 				<categoryname>general.page</categoryname>
 				<optiontype>boolean</optiontype>
@@ -599,7 +594,7 @@ private:wcf.acp.option.exception_privacy.private</selectoptions>
 			<option name="cookie_prefix">
 				<categoryname>general.system.cookie</categoryname>
 				<optiontype>text</optiontype>
-				<defaultvalue>wsc52_</defaultvalue>
+				<defaultvalue>wsc_</defaultvalue>
 				<validationpattern>^[a-zA-Z0-9_]+$</validationpattern>
 			</option>
 			<!-- /general.system.cookie-->
@@ -919,6 +914,11 @@ physical:wcf.acp.option.google_maps_type.physical</selectoptions>
 				<optiontype>textareaI18n</optiontype>
 				<supporti18n>1</supporti18n>
 			</option>
+			<option name="mail_signature_html">
+				<categoryname>general.mail.general</categoryname>
+				<optiontype>textareaI18n</optiontype>
+				<supporti18n>1</supporti18n>
+			</option>
 			<!-- /general.mail.general -->
 			<!-- general.mail.send -->
 			<option name="mail_send_method">
@@ -1012,12 +1012,6 @@ redis:wcf.acp.option.cache_source_type.redis</selectoptions>
 				<optiontype>text</optiontype>
 			</option>
 			<!-- /general.payment -->
-			<option name="attachment_enable_thumbnails">
-				<categoryname>message.attachment</categoryname>
-				<optiontype>boolean</optiontype>
-				<defaultvalue>1</defaultvalue>
-				<enableoptions>attachment_retain_dimensions,attachment_thumbnail_height,attachment_thumbnail_width</enableoptions>
-			</option>
 			<option name="attachment_retain_dimensions">
 				<categoryname>message.attachment</categoryname>
 				<optiontype>boolean</optiontype>
@@ -1167,36 +1161,12 @@ XING</selectoptions>
 				<optiontype>textarea</optiontype>
 			</option>
 			<!-- /message.censorship -->
-			<option name="register_enable_password_security_check">
+			<option name="password_min_score">
 				<categoryname>user.password</categoryname>
-				<optiontype>boolean</optiontype>
-				<enableoptions>register_password_min_length,register_password_must_contain_lower_case,register_password_must_contain_upper_case,register_password_must_contain_digit,register_password_must_contain_special_char</enableoptions>
-			</option>
-			<option name="register_password_min_length">
-				<categoryname>user.password</categoryname>
-				<optiontype>integer</optiontype>
-				<defaultvalue>8</defaultvalue>
-				<minvalue>0</minvalue>
-				<suffix>chars</suffix>
-			</option>
-			<option name="register_password_must_contain_lower_case">
-				<categoryname>user.password</categoryname>
-				<optiontype>boolean</optiontype>
-				<defaultvalue>1</defaultvalue>
-			</option>
-			<option name="register_password_must_contain_upper_case">
-				<categoryname>user.password</categoryname>
-				<optiontype>boolean</optiontype>
-				<defaultvalue>1</defaultvalue>
-			</option>
-			<option name="register_password_must_contain_digit">
-				<categoryname>user.password</categoryname>
-				<optiontype>boolean</optiontype>
-				<defaultvalue>1</defaultvalue>
-			</option>
-			<option name="register_password_must_contain_special_char">
-				<categoryname>user.password</categoryname>
-				<optiontype>boolean</optiontype>
+				<optiontype>select</optiontype>
+				<selectoptions>0:wcf.acp.option.password_min_score.0
+1:wcf.acp.option.password_min_score.1
+2:wcf.acp.option.password_min_score.2</selectoptions>
 				<defaultvalue>1</defaultvalue>
 			</option>
 			<!-- /user.password -->
@@ -1763,10 +1733,13 @@ DESC:wcf.global.sortOrder.descending</selectoptions>
 		</options>
 	</import>
 	<delete>
-		<option name="attachment_storage" />
-		<option name="like_allow_for_own_content" />
-		<option name="like_enable_dislike" />
-		<option name="module_attachment"/>
-		<option name="message_sidebar_enable_user_online_marking"/>
+		<option name="attachment_enable_thumbnails" />
+		<option name="message_sidebar_enable_user_online_marking" />
+		<option name="register_enable_password_security_check" />
+		<option name="register_password_min_length" />
+		<option name="register_password_must_contain_lower_case" />
+		<option name="register_password_must_contain_upper_case" />
+		<option name="register_password_must_contain_digit" />
+		<option name="register_password_must_contain_special_char" />
 	</delete>
 </data>

@@ -185,8 +185,8 @@ abstract class AbstractDatabaseObjectAction implements IDatabaseObjectAction, ID
 			throw new PermissionDeniedException();
 		}
 		
-		// execute action
-		call_user_func_array([$this, $actionName], $this->getParameters());
+		// validate action
+		$this->{$actionName}();
 		
 		// fire event action
 		EventHandler::getInstance()->fireAction($this, 'validateAction');
@@ -201,7 +201,7 @@ abstract class AbstractDatabaseObjectAction implements IDatabaseObjectAction, ID
 			throw new SystemException("call to undefined function '".$this->getActionName()."'");
 		}
 		
-		$this->returnValues = call_user_func([$this, $this->getActionName()]);
+		$this->returnValues = $this->{$this->getActionName()}();
 		
 		// reset cache
 		if (in_array($this->getActionName(), $this->resetCache)) {
@@ -402,7 +402,7 @@ abstract class AbstractDatabaseObjectAction implements IDatabaseObjectAction, ID
 	}
 	
 	/**
-	 * Returns a single object and throws an UserInputException if no or more than one object is given.
+	 * Returns a single object and throws a UserInputException if no or more than one object is given.
 	 * 
 	 * @return	DatabaseObject
 	 * @throws	UserInputException
@@ -563,7 +563,7 @@ abstract class AbstractDatabaseObjectAction implements IDatabaseObjectAction, ID
 				else {
 					if ($structure === self::STRUCT_FLAT) {
 						$target[$variableName] = StringUtil::trim($target[$variableName]);
-						if (!$allowEmpty && empty($target[$variableName])) {
+						if (!$allowEmpty && $target[$variableName] === '') {
 							throw new UserInputException($variableName);
 						}
 					}
@@ -574,7 +574,7 @@ abstract class AbstractDatabaseObjectAction implements IDatabaseObjectAction, ID
 						}
 						
 						for ($i = 0, $length = count($target[$variableName]); $i < $length; $i++) {
-							if (empty($target[$variableName][$i])) {
+							if ($target[$variableName][$i] === '') {
 								throw new UserInputException($variableName);
 							}
 						}

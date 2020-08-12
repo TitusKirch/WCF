@@ -366,7 +366,7 @@
 		<item name="wcf.acp.dataImport.data.com.woltlab.wcf.reactionType"><![CDATA[Reaction Types]]></item>
 		<item name="wcf.acp.dataImport.data.com.woltlab.wcf.page"><![CDATA[CMS pages]]></item>
 		<item name="wcf.acp.dataImport.existingMapping.confirmMessage"><![CDATA[Do you really want to delete the existing import mappings?]]></item>
-		<item name="wcf.acp.dataImport.existingMapping.notice"><![CDATA[There are import mappings created by a previous import process, these mappings are used to properly handle connections between data from the imported forum and this one. In case you have imported all the desired data, you can <a id="deleteMapping">delete</a> the mappings. It is strongly recommended to keep these mappings as long as there is still data to be imported now or in the future.]]></item>
+		<item name="wcf.acp.dataImport.existingMapping.notice"><![CDATA[There are import mappings created by a previous import process, these mappings are used to properly handle connections between data from the imported forum and this one. In case you have imported all the desired data, you can <a id="deleteMapping">delete</a> the mappings. It is strongly recommended to keep these mappings as long as there is still data to be imported now or in the future. These mappings cannot be used to perform incremental imports of the same type of data. Instead their purpose is to import different types of data using multiple import processes, possibly using importers provided by a plugin.]]></item>
 		<item name="wcf.acp.dataImport.exporter"><![CDATA[Data Source]]></item>
 		<item name="wcf.acp.dataImport.selectExporter"><![CDATA[Select Data Source]]></item>
 		<item name="wcf.acp.dataImport.selectExporter.error.invalid"><![CDATA[The selected data source is invalid.]]></item>
@@ -856,6 +856,8 @@ ATTENTION: The messages listed above are greatly shortened. You can view details
 		<item name="wcf.acp.group.option.user.profile.trophy.canSeeTrophies"><![CDATA[Can see trophies]]></item>
 		<item name="wcf.acp.group.option.user.profile.trophy.maxUserSpecialTrophies"><![CDATA[Maximum number of special trophies]]></item>
 		<item name="wcf.acp.group.option.user.profile.trophy.maxUserSpecialTrophies.description"><![CDATA[Special trophies can be individually selected by the user and displayed in the message sidebar and the user profile.]]></item>
+		<item name="wcf.acp.group.option.category.user.profile.payment"><![CDATA[Payment]]></item>
+		<item name="wcf.acp.group.option.user.profile.payment.canBuyPaidSubscription"><![CDATA[Can buy paid subscriptions]]></item>
 		<item name="wcf.acp.group.option.category.user.profile.coverPhoto"><![CDATA[Cover Photos]]></item>
 		<item name="wcf.acp.group.option.user.profile.coverPhoto.canSeeCoverPhotos"><![CDATA[Can view  users’ cover photos]]></item>
 		<item name="wcf.acp.group.option.user.profile.coverPhoto.canUploadCoverPhoto"><![CDATA[Can upload their cover photo]]></item>
@@ -959,7 +961,7 @@ ATTENTION: The messages listed above are greatly shortened. You can view details
 		<item name="wcf.acp.language.export.customValues"><![CDATA[Include custom items]]></item>
 		<item name="wcf.acp.language.export.selectPackages"><![CDATA[Packages]]></item>
 		<item name="wcf.acp.language.import.error"><![CDATA[Errors occurred while importing the language file:]]></item>
-		<item name="wcf.acp.language.import.error.categoryMismatch"><![CDATA[The phrase “{$languageItem} does not belong to the “{$categoryName}” category.]]></item>
+		<item name="wcf.acp.language.import.error.categoryMismatch"><![CDATA[The phrase “{$languageItem}” does not belong to the “{$categoryName}” category.]]></item>
 		<item name="wcf.acp.language.import.source.file"><![CDATA[Path to Language File]]></item>
 		<item name="wcf.acp.language.import.source.file.description"><![CDATA[Enter the relative path to a valid XML language file.]]></item>
 		<item name="wcf.acp.language.import.source.upload"><![CDATA[Upload Language File]]></item>
@@ -1314,8 +1316,10 @@ ATTENTION: The messages listed above are greatly shortened. You can view details
 		<item name="wcf.acp.option.mail_send_method.debugFolder"><![CDATA[Use Debug (Folder with .eml files)]]></item>
 		<item name="wcf.acp.option.mail_send_method.php"><![CDATA[Use PHP]]></item>
 		<item name="wcf.acp.option.mail_send_method.smtp"><![CDATA[Use SMTP]]></item>
-		<item name="wcf.acp.option.mail_signature"><![CDATA[Sender’s Signature]]></item>
+		<item name="wcf.acp.option.mail_signature"><![CDATA[Sender’s Signature (Text)]]></item>
 		<item name="wcf.acp.option.mail_signature.description"><![CDATA[The signature that will be appended to every message.]]></item>
+		<item name="wcf.acp.option.mail_signature"><![CDATA[Sender’s Signature (HTML)]]></item>
+		<item name="wcf.acp.option.mail_signature.description"><![CDATA[HTML formatted version of the Sender’s Signature. If this field is left empty the text based signature will be used.]]></item>
 		<item name="wcf.acp.option.mail_smtp_host"><![CDATA[SMTP Server]]></item>
 		<item name="wcf.acp.option.mail_smtp_host.description"><![CDATA[The SMTP port 465 requires the host to be prefixed with <kbd>ssl://</kbd>, for example, <kbd>ssl://mail.example.com</kbd> instead of <kbd>mail.woltlab.com</kbd>.]]></item>
 		<item name="wcf.acp.option.mail_smtp_port"><![CDATA[SMTP Port]]></item>
@@ -1361,8 +1365,6 @@ ATTENTION: The messages listed above are greatly shortened. You can view details
 		<item name="wcf.acp.option.enable_debug_mode.description"><![CDATA[Enables extensive error messages, it should always be disabled in production environments!]]></item>
 		<item name="wcf.acp.option.enable_production_debug_mode"><![CDATA[Problem analysis in production environments]]></item>
 		<item name="wcf.acp.option.enable_production_debug_mode.description"><![CDATA[Appends the current URL to database queries to assist looking them up in the database server’s log files.]]></item>
-		<item name="wcf.acp.option.external_link_rel_nofollow"><![CDATA[Append the attribute “rel="nofollow"” to all external links]]></item>
-		<item name="wcf.acp.option.external_link_rel_nofollow.description"><![CDATA[The attribute “rel="nofollow"” tells search engines to disregard external links.]]></item>
 		<item name="wcf.acp.option.external_link_target_blank"><![CDATA[Open external links in a new window]]></item>
 		<item name="wcf.acp.option.external_link_target_blank.description"><![CDATA[Appends the attribute “target="_blank"” to external links, causing the user’s browser to open the link in a new window.]]></item>
 		<item name="wcf.acp.option.enable_benchmark"><![CDATA[Enable benchmark]]></item>
@@ -1380,7 +1382,6 @@ ATTENTION: The messages listed above are greatly shortened. You can view details
 		<item name="wcf.acp.option.recaptcha_publickey_invisible.description"><![CDATA[Enter the keys <b>in addition</b> to the keys above if you want to use the invisible variant of reCAPTCHA.]]></item>
 		<item name="wcf.acp.option.recaptcha_privatekey_invisible"><![CDATA[Private API Key (Invisible reCAPTCHA)]]></item>
 		<item name="wcf.acp.option.category.message.attachment"><![CDATA[Attachments]]></item>
-		<item name="wcf.acp.option.attachment_enable_thumbnails"><![CDATA[Create thumbnails for attachment images]]></item>
 		<item name="wcf.acp.option.attachment_retain_dimensions"><![CDATA[Retain thumbnail dimensions]]></item>
 		<item name="wcf.acp.option.attachment_thumbnail_height"><![CDATA[Thumbnail Height]]></item>
 		<item name="wcf.acp.option.attachment_thumbnail_width"><![CDATA[Thumbnail Width]]></item>
@@ -1444,13 +1445,11 @@ ATTENTION: The messages listed above are greatly shortened. You can view details
 		<item name="wcf.acp.option.module_user_rank"><![CDATA[User ranks]]></item>
 		<item name="wcf.acp.option.module_user_signature"><![CDATA[Signatures]]></item>
 		<item name="wcf.acp.option.module_team_page"><![CDATA[Staff list]]></item>
-		<item name="wcf.acp.option.register_enable_password_security_check"><![CDATA[Enable password validation]]></item>
-		<item name="wcf.acp.option.register_enable_password_security_check.description"><![CDATA[Password complexity will be validated, unsafe passwords will be rejected.]]></item>
-		<item name="wcf.acp.option.register_password_min_length"><![CDATA[Minimum Password Length]]></item>
-		<item name="wcf.acp.option.register_password_must_contain_digit"><![CDATA[Password must contain digits]]></item>
-		<item name="wcf.acp.option.register_password_must_contain_lower_case"><![CDATA[Password must contain lowercase characters]]></item>
-		<item name="wcf.acp.option.register_password_must_contain_special_char"><![CDATA[Password must contain special characters]]></item>
-		<item name="wcf.acp.option.register_password_must_contain_upper_case"><![CDATA[Password must contain uppercase characters]]></item>
+		<item name="wcf.acp.option.password_min_score"><![CDATA[Security Level]]></item>
+		<item name="wcf.acp.option.password_min_score.description"><![CDATA[“Score” value of the <a href="https://github.com/dropbox/zxcvbn" class="externalURL">zxcvbn library</a> that passwords need to achive.]]></item>
+		<item name="wcf.acp.option.password_min_score.0"><![CDATA[0: Disabled]]></item>
+		<item name="wcf.acp.option.password_min_score.1"><![CDATA[1: Very guessable (1 million attempts)]]></item>
+		<item name="wcf.acp.option.password_min_score.2"><![CDATA[2: Somewhat guessable (100 million attempts)]]></item>
 		<item name="wcf.acp.option.register_forbidden_usernames"><![CDATA[Reserved Usernames]]></item>
 		<item name="wcf.acp.option.register_forbidden_usernames.description"><![CDATA[You can specify which usernames are unavailable for registration. Enter one username per line.]]></item>
 		<item name="wcf.acp.option.register_forbidden_emails"><![CDATA[Reserved Email Addresses]]></item>
@@ -1921,6 +1920,8 @@ The database is carefully maintained, but there will be always be a margin of er
 		<item name="wcf.acp.package.validation.errorCode.13"><![CDATA[The API version “{$version}” is invalid.]]></item>
 		<item name="wcf.acp.package.validation.errorCode.14"><![CDATA[This package was created for {if $isOlderVersion}an older{else}a newer{/if} version of WoltLab Suite and is not compatible.]]></item>
 		<item name="wcf.acp.package.validation.errorCode.15"><![CDATA[This package does not contain any data on API compatibility, the installation is prevented while the developer tools are enabled.]]></item>
+		<item name="wcf.acp.package.validation.errorCode.16"><![CDATA[In addition to the &lt;void/&gt; instruction additional Package Installation Plugins are used.]]></item>
+		<item name="wcf.acp.package.validation.errorCode.17"><![CDATA[The &lt;void/&gt; instruction may not be used in the install-instructions.]]></item>
 		<item name="wcf.acp.package.validation.failed"><![CDATA[The package cannot be installed, please review the validation results below.]]></item>
 		<item name="wcf.acp.package.evaluation.expired"><![CDATA[The evaluation period of <strong>{$packageName}</strong> has expired. For a legal use of this software, please update to the latest available version.{if $pluginStoreFileID || $isWoltLab}<br>The latest version can be purchased quickly and securely <strong>{if $pluginStoreFileID}<a href="https://pluginstore.woltlab.com/file/{$pluginStoreFileID}/">in the WoltLab Plugin-Store</a>{else}<a href="https://www.woltlab.com/purchase/">on WoltLab.com</a>{/if}</strong>.{/if}]]></item>
 		<item name="wcf.acp.package.evaluation.pending"><![CDATA[The evaluation period of the apps listed below will expire on <strong>{$evaluationEndDate|plainTime}</strong> ({@$evaluationEndDate|dateDiff:TIME_NOW:true}). The apps will automatically disable themselves after this date and become unusable, you'll need to install the latest versions of the apps to active them again.
@@ -1936,6 +1937,7 @@ If you have <strong>already bought the licenses for the listed apps</strong>, th
 		<item name="wcf.acp.package.search.status.loading"><![CDATA[Searching…]]></item>
 		<item name="wcf.acp.package.search.status.noResults"><![CDATA[There were no matches.]]></item>
 		<item name="wcf.acp.package.search.status.refreshDatabase"><![CDATA[Retrieving the package lists…]]></item>
+		<item name="wcf.acp.package.search.result.official"><![CDATA[{if $count === 0}No matches{elseif $count === 1}One match{else}{#$count} matches{/if} in official WoltLab® packages]]></item>
 		<item name="wcf.acp.package.search.result.thirdParty"><![CDATA[{if $count === 0}No matches{elseif $count === 1}One match{else}{#$count} matches{/if} in package sources maintained by third parties]]></item>
 		<item name="wcf.acp.package.search.result.trusted"><![CDATA[{if $count === 0}No matches{elseif $count === 1}One match{else}{#$count} matches{/if} in official package sources]]></item>
 		<item name="wcf.acp.package.error.databaseChange"><![CDATA[The database layout could not be changed because of the following errors:
@@ -2800,6 +2802,8 @@ If you have <strong>already bought the licenses for the listed apps</strong>, th
 		<item name="wcf.acp.style.coverPhoto"><![CDATA[Default Cover Photo]]></item>
 		<item name="wcf.acp.style.coverPhoto.delete.confirmMessage"><![CDATA[Do you really want to delete the default cover photo? Once deleted, the global default photo will be used instead.]]></item>
 		<item name="wcf.acp.style.coverPhoto.description"><![CDATA[The image must be at least {$coverPhotoMinWidth}×{$coverPhotoMinHeight} pixels large, acceptable image types are GIF, JPG, JPEG and PNG.]]></item>
+		<item name="wcf.acp.style.customAssets"><![CDATA[Additional Images]]></item>
+		<item name="wcf.acp.style.customAssets.description"><![CDATA[{literal}The uploaded images will be stored with the same file name within the <kbd>custom/</kbd> folder in the style’s image folder. You can retrieve the folder’s path within the CSS by using <kbd>#{$style_image_path}custom/</kbd>.{/literal}]]></item>
 		<item name="wcf.acp.style.delete.confirmMessage"><![CDATA[Do you really want to delete the style <span class="confirmationObject">{$style->styleName}</span>?]]></item>
 		<item name="wcf.acp.style.edit"><![CDATA[Edit Style]]></item>
 		<item name="wcf.acp.style.exportAsPackage"><![CDATA[Export as package]]></item>
@@ -2870,8 +2874,10 @@ If you have <strong>already bought the licenses for the listed apps</strong>, th
 		<item name="wcf.acp.style.globals.fontSizeHeadline"><![CDATA[Font Size (Headline)]]></item>
 		<item name="wcf.acp.style.globals.fontSizeSection"><![CDATA[Font Size (Section)]]></item>
 		<item name="wcf.acp.style.globals.fontSizeTitle"><![CDATA[Font Size (Page Title)]]></item>
-		<item name="wcf.acp.style.globals.useGoogleFont"><![CDATA[Use Google font face]]></item>
 		<item name="wcf.acp.style.globals.fontFamilyGoogle"><![CDATA[Font Face]]></item>
+		<item name="wcf.acp.style.globals.fontFamilyGoogle.description"><![CDATA[The selected font face will be downloaded when saving the style and afterwards will be delivered as a web font to your users without connecting to external services.]]></item>
+		<item name="wcf.acp.style.globals.fontFamilyGoogle.error.downloadFailed"><![CDATA[Downloading the given font face failed.]]></item>
+		<item name="wcf.acp.style.globals.fontFamilyGoogle.error.downloadFailed.notFound"><![CDATA[The given font face could not be found.]]></item>
 		<item name="wcf.acp.style.globals.fontFamilyFallback"><![CDATA[Font Face (Fallback)]]></item>
 		<item name="wcf.acp.style.favicon"><![CDATA[Individual Favicon]]></item>
 		<item name="wcf.acp.style.favicon.description"><![CDATA[Upload an 256×256 pixels image, acceptable image types are JPG and PNG. The uploaded image will be used to derive all required favicon sizes.]]></item>
@@ -3120,9 +3126,7 @@ the lost password form <a href="{link controller='LostPassword' isHtmlEmail=true
 by an administrator. You are now able to use your user account to it’s full extend.</p>]]></item>
 		<item name="wcf.acp.user.activation.mail.plaintext"><![CDATA[Dear {@$mailbox->getUser()->username},
 
-Your account on the website: {@PAGE_TITLE|language} [URL:{link isEmail=true}{/link}] has been approved
-by an administrator. You are now able to use your user account to it’s
-full extend.]]></item>
+Your account on the website: {@PAGE_TITLE|language} [URL:{link isEmail=true}{/link}] has been approved by an administrator. You are now able to use your user account to its full extend.]]></item>
 		<item name="wcf.acp.user.notificationPresetSettings"><![CDATA[Default Notification Settings]]></item>
 		<item name="wcf.acp.user.notificationPresetSettings.description"><![CDATA[You can set the default notification settings for new users, any changes made here will not affect existing users. Users can customize their settings at any time.]]></item>
 		<item name="wcf.acp.user.notificationPresetSettings.applyChangesToExistingUsers"><![CDATA[Apply changes for existing users also]]></item>
@@ -3289,9 +3293,12 @@ Errors are:
 - Missing commands
 - Failing commands
 - Core errors]]></item>
-		<item name="wcf.cli.help.packageID"><![CDATA[The given package id will be used as a default for this session.]]></item>
 		<item name="wcf.cli.worker.setParameter"><![CDATA[Sets a worker parameter e.g.: --setParameter param=value]]></item>
 		<item name="wcf.cli.worker.list"><![CDATA[Lists all workers.]]></item>
+		<item name="wcf.cli.worker.threads"><![CDATA[Requested number of parallel processes.]]></item>
+		<item name="wcf.cli.worker.threads.windows"><![CDATA[Parallel processing using --threads is not available on Windows.]]></item>
+		<item name="wcf.cli.worker.threadId"><![CDATA[Specifies the thread id when processing in parallel. Used internally when --threads is given.]]></item>
+		<item name="wcf.cli.worker.threadId.invalid"><![CDATA[The given thread id is not valid.]]></item>
 		<item name="wcf.cli.error.help.noArguments"><![CDATA[The command "{$command}" does not support any parameters.]]></item>
 		<item name="wcf.cli.error.language.notFound"><![CDATA[The language with the language code "{$languageCode}" could not be found.]]></item>
 		<item name="wcf.cli.error.command.notFound"><![CDATA[The command "{$command}" could not be found. Type in "commands" to list available commands.]]></item>
@@ -3349,6 +3356,7 @@ Errors are:
 		<item name="wcf.comment.guestDialog.title"><![CDATA[Guest Comment]]></item>
 		<item name="wcf.comment.sortField.cumulativeLikes"><![CDATA[Reactions]]></item>
 		<item name="wcf.comment.sortField.time"><![CDATA[Date]]></item>
+		<item name="wcf.comment.objectAuthor"><![CDATA[Author]]></item>
 	</category>
 	<category name="wcf.condition">
 		<item name="wcf.condition.greaterThan"><![CDATA[greater than]]></item>
@@ -4015,6 +4023,7 @@ Attachments:
 	<category name="wcf.media">
 		<item name="wcf.media.altText"><![CDATA[Alternate Text]]></item>
 		<item name="wcf.media.button.insert"><![CDATA[Insert]]></item>
+		<item name="wcf.media.button.replaceFile"><![CDATA[Replace File]]></item>
 		<item name="wcf.media.button.select"><![CDATA[Select]]></item>
 		<item name="wcf.media.caption"><![CDATA[Caption]]></item>
 		<item name="wcf.media.caption.enableHtml"><![CDATA[Enable HTML code in caption]]></item>
@@ -4041,6 +4050,8 @@ Attachments:
 		<item name="wcf.media.media.pageTitle"><![CDATA[{if $__wcf->session->getPermission('admin.content.cms.canOnlyAccessOwnMedia')}Own {/if}Media]]></item>
 		<item name="wcf.media.search.cancel"><![CDATA[Cancel Search]]></item>
 		<item name="wcf.media.search.placeholder"><![CDATA[Search Files]]></item>
+		<item name="wcf.media.upload.error.differentFileExtension"><![CDATA[The new file must have the same file extension as the current file.]]></item>
+		<item name="wcf.media.upload.error.differentFileType"><![CDATA[The new file must be of the same file type as the current file.]]></item>
 		<item name="wcf.media.upload.error.noImage"><![CDATA[The uploaded file is no image.]]></item>
 		<item name="wcf.media.upload.error.uploadFailed"><![CDATA[An unknown error occurred during the upload.]]></item>
 		<item name="wcf.media.upload.success"><![CDATA[The file has been successfully uploaded.]]></item>
@@ -4507,6 +4518,7 @@ Attachments:
 		<item name="wcf.user.usernameOrEmail"><![CDATA[Username or Email Address]]></item>
 		<item name="wcf.user.gender.male"><![CDATA[Male]]></item>
 		<item name="wcf.user.gender.female"><![CDATA[Female]]></item>
+		<item name="wcf.user.gender.other"><![CDATA[Other]]></item>
 		<item name="wcf.user.members"><![CDATA[Members]]></item>
 		<item name="wcf.user.members.filter"><![CDATA[Filter Members]]></item>
 		<item name="wcf.user.members.noMembers"><![CDATA[No members matched your criteria. <a href="{link controller='MembersList'}{/link}">Reset the applied filters.</a>]]></item>
@@ -4529,12 +4541,35 @@ Attachments:
 		<item name="wcf.user.styles"><![CDATA[Styles]]></item>
 		<item name="wcf.user.style.description"><![CDATA[Forces a specific style instead of the default one.]]></item>
 		<item name="wcf.user.username.description"><![CDATA[Username must be {REGISTER_USERNAME_MIN_LENGTH} up to {REGISTER_USERNAME_MAX_LENGTH} characters long.]]></item>
-		<item name="wcf.user.password.description"><![CDATA[{if REGISTER_ENABLE_PASSWORD_SECURITY_CHECK}Due to security reasons every password must be at least {REGISTER_PASSWORD_MIN_LENGTH} characters long{if REGISTER_PASSWORD_MUST_CONTAIN_LOWER_CASE || REGISTER_PASSWORD_MUST_CONTAIN_UPPER_CASE || REGISTER_PASSWORD_MUST_CONTAIN_DIGIT || REGISTER_PASSWORD_MUST_CONTAIN_SPECIAL_CHAR}{*
-		*} and contain {*
-		*}{if REGISTER_PASSWORD_MUST_CONTAIN_LOWER_CASE}lower-case letters{/if}{*
-		*}{if REGISTER_PASSWORD_MUST_CONTAIN_UPPER_CASE}{if REGISTER_PASSWORD_MUST_CONTAIN_LOWER_CASE}{if REGISTER_PASSWORD_MUST_CONTAIN_DIGIT || REGISTER_PASSWORD_MUST_CONTAIN_SPECIAL_CHAR},{else} and{/if} {/if}upper-case letters{/if}{*
-		*}{if REGISTER_PASSWORD_MUST_CONTAIN_DIGIT}{if REGISTER_PASSWORD_MUST_CONTAIN_LOWER_CASE || REGISTER_PASSWORD_MUST_CONTAIN_UPPER_CASE}{if REGISTER_PASSWORD_MUST_CONTAIN_SPECIAL_CHAR},{else} and{/if} {/if}digits{/if}{*
-		*}{if REGISTER_PASSWORD_MUST_CONTAIN_SPECIAL_CHAR}{if REGISTER_PASSWORD_MUST_CONTAIN_LOWER_CASE || REGISTER_PASSWORD_MUST_CONTAIN_UPPER_CASE || REGISTER_PASSWORD_MUST_CONTAIN_DIGIT} and {/if}special chars{/if}{/if}.{else}A secure password should be at least 8 characters long.{/if}]]></item>
+		<item name="wcf.user.password.description"><![CDATA[A secure password should be at least 10 characters long.]]></item>
+		<item name="wcf.user.password.strength"><![CDATA[Password Strength]]></item>
+		<item name="wcf.user.password.zxcvbn.suggestions.use_words_avoid_common_phrases"><![CDATA[Use a few words, avoid common phrases.]]></item>
+		<item name="wcf.user.password.zxcvbn.suggestions.no_need_for_symbols_digits_uppercase"><![CDATA[No need for symbols, digits, or uppercase letters.]]></item>
+		<item name="wcf.user.password.zxcvbn.suggestions.add_word_uncommon_better"><![CDATA[Add another word or two. Uncommon words are better.]]></item>
+		<item name="wcf.user.password.zxcvbn.suggestions.use_longer_keyboard_pattern"><![CDATA[Use a longer keyboard pattern with more turns.]]></item>
+		<item name="wcf.user.password.zxcvbn.suggestions.avoid_repeat"><![CDATA[Avoid repeated words and characters.]]></item>
+		<item name="wcf.user.password.zxcvbn.suggestions.avoid_sequence"><![CDATA[Avoid sequences.]]></item>
+		<item name="wcf.user.password.zxcvbn.suggestions.avoid_recent_year"><![CDATA[Avoid recent years.]]></item>
+		<item name="wcf.user.password.zxcvbn.suggestions.avoid_associated_year"><![CDATA[Avoid years that are associated with you.]]></item>
+		<item name="wcf.user.password.zxcvbn.suggestions.avoid_date"><![CDATA[Avoid dates and years that are associated with you.]]></item>
+		<item name="wcf.user.password.zxcvbn.suggestions.start_upper"><![CDATA[Capitalization does nott help very much.]]></item>
+		<item name="wcf.user.password.zxcvbn.suggestions.all_upper"><![CDATA[All-uppercase is almost as easy to guess as all-lowercase.]]></item>
+		<item name="wcf.user.password.zxcvbn.suggestions.reversed"><![CDATA[Reversed words aren’t much harder to guess.]]></item>
+		<item name="wcf.user.password.zxcvbn.suggestions.l33t"><![CDATA[Predictable substitutions like “@” instead of “a” don't help very much.]]></item>
+		<item name="wcf.user.password.zxcvbn.warnings.straight_row"><![CDATA[Straight rows of keys are easy to guess.]]></item>
+		<item name="wcf.user.password.zxcvbn.warnings.short_keyboard_pattern"><![CDATA[Short keyboard patterns are easy to guess.]]></item>
+		<item name="wcf.user.password.zxcvbn.warnings.repeat_single_char"><![CDATA[Repeats like “aaa” are easy to guess.]]></item>
+		<item name="wcf.user.password.zxcvbn.warnings.repeat"><![CDATA[Repeats like “abcabcabc” are only slightly harder to guess than “abc”.]]></item>
+		<item name="wcf.user.password.zxcvbn.warnings.sequence"><![CDATA[Sequences like “abc” or “6543” are easy to guess.]]></item>
+		<item name="wcf.user.password.zxcvbn.warnings.recent_year"><![CDATA[Recent years are easy to guess.]]></item>
+		<item name="wcf.user.password.zxcvbn.warnings.date"><![CDATA[Dates are often easy to guess.]]></item>
+		<item name="wcf.user.password.zxcvbn.warnings.top_10"><![CDATA[This is a top-10 common password.]]></item>
+		<item name="wcf.user.password.zxcvbn.warnings.top_100"><![CDATA[This is a top-100 common password.]]></item>
+		<item name="wcf.user.password.zxcvbn.warnings.common"><![CDATA[This is a very common password.]]></item>
+		<item name="wcf.user.password.zxcvbn.warnings.common_alike"><![CDATA[This is similar to a commonly used password.]]></item>
+		<item name="wcf.user.password.zxcvbn.warnings.sole_word"><![CDATA[A word by itself is easy to guess.]]></item>
+		<item name="wcf.user.password.zxcvbn.warnings.sole_name"><![CDATA[Names and surnames by themselves are easy to guess.]]></item>
+		<item name="wcf.user.password.zxcvbn.warnings.name"><![CDATA[Common names and surnames are easy to guess.]]></item>
 		<item name="wcf.user.lostPassword"><![CDATA[Lost Password]]></item>
 		<item name="wcf.user.lostPassword.description"><![CDATA[You must provide your username or email address to request a new password. Contact the site’s administrator if you need assistance.]]></item>
 		<item name="wcf.user.lostPassword.email.error.notFound"><![CDATA[“{$email}” is not used by any account.]]></item>
@@ -4581,12 +4616,7 @@ the website <a href="{link isHtmlEmail=true}{/link}">{@PAGE_TITLE|language}</a>.
 		<item name="wcf.user.quit.success"><![CDATA[Your user account will be deleted on {TIME_NOW+7*86400|date}. During this time period you can abort the deletion on this page.]]></item>
 		<item name="wcf.user.quit.cancel.success"><![CDATA[The account deletion has been aborted.]]></item>
 		<item name="wcf.user.emailActivation"><![CDATA[Verify New Email Address]]></item>
-		<item name="wcf.user.password.error.notSecure"><![CDATA[Due to security reasons, every password must be at least {REGISTER_PASSWORD_MIN_LENGTH} characters long{if REGISTER_PASSWORD_MUST_CONTAIN_LOWER_CASE || REGISTER_PASSWORD_MUST_CONTAIN_UPPER_CASE || REGISTER_PASSWORD_MUST_CONTAIN_DIGIT || REGISTER_PASSWORD_MUST_CONTAIN_SPECIAL_CHAR}{*
-		*} and contain {*
-		*}{if REGISTER_PASSWORD_MUST_CONTAIN_LOWER_CASE}lower-case letters{/if}{*
-		*}{if REGISTER_PASSWORD_MUST_CONTAIN_UPPER_CASE}{if REGISTER_PASSWORD_MUST_CONTAIN_LOWER_CASE}{if REGISTER_PASSWORD_MUST_CONTAIN_DIGIT || REGISTER_PASSWORD_MUST_CONTAIN_SPECIAL_CHAR},{else} and{/if} {/if}upper-case letters{/if}{*
-		*}{if REGISTER_PASSWORD_MUST_CONTAIN_DIGIT}{if REGISTER_PASSWORD_MUST_CONTAIN_LOWER_CASE || REGISTER_PASSWORD_MUST_CONTAIN_UPPER_CASE}{if REGISTER_PASSWORD_MUST_CONTAIN_SPECIAL_CHAR},{else} and{/if} {/if}digits{/if}{*
-		*}{if REGISTER_PASSWORD_MUST_CONTAIN_SPECIAL_CHAR}{if REGISTER_PASSWORD_MUST_CONTAIN_LOWER_CASE || REGISTER_PASSWORD_MUST_CONTAIN_UPPER_CASE || REGISTER_PASSWORD_MUST_CONTAIN_DIGIT} and {/if}special chars{/if}{/if}.]]></item>
+		<item name="wcf.user.password.error.notSecure"><![CDATA[Please select a more secure password.]]></item>
 		<item name="wcf.user.changeUsername.success"><![CDATA[The username has been changed.]]></item>
 		<item name="wcf.user.changeEmail.success"><![CDATA[The email address has been changed.]]></item>
 		<item name="wcf.user.changeEmail.needReactivation"><![CDATA[Your new email address{if $newEmail|isset} (“{$newEmail}”){/if} must be verified first. You should have received an email which was sent to your new email address containing an activation link. Open the link to verify your new email address.]]></item>
@@ -5028,6 +5058,11 @@ Open the link below to access the user profile:
 		<item name="wcf.user.notification.notifications.enabled"><![CDATA[Enabled]]></item>
 		<item name="wcf.user.notification.showAll"><![CDATA[Display All Notifications]]></item>
 		<item name="wcf.user.notification.mail.disabled"><![CDATA[Email notification has been disabled.]]></item>
+		<item name="wcf.user.notification.mail.disabled"><![CDATA[The selected email notifications have been unsubscribed.]]></item>
+		<item name="wcf.user.notification.mail.unsubscribe.confirm"><![CDATA[Unsubscribe selected email notifications]]></item>
+		<item name="wcf.user.notification.mail.unsubscribe.description"><![CDATA[Please select the email notifications you would like to unsubscribe.]]></item>
+		<item name="wcf.user.notification.mail.unsubscribe.event"><![CDATA[Notification Type]]></item>
+		<item name="wcf.user.notification.mail.unsubscribe.event.all"><![CDATA[All Email Notifications]]></item>
 		<item name="wcf.user.notification.mailNotificationType.none"><![CDATA[No Email Notification]]></item>
 		<item name="wcf.user.notification.mailNotificationType.instant"><![CDATA[Instant Email Notification]]></item>
 		<item name="wcf.user.notification.mailNotificationType.daily"><![CDATA[Daily Email Notification]]></item>
@@ -5041,14 +5076,14 @@ Visit your notification settings [URL:{link controller='NotificationSettings' is
 your notifications on {@PAGE_TITLE|language} [URL:{link isEmail=true}{/link}] as you wish.
 
 If you only wish to disable this type of notification you can do so by visiting:
-{link controller='NotificationDisable' isEmail=true}eventID={@$event->eventID}&userID={@$mailbox->getUser()->userID}&token={@$mailbox->getUser()->notificationMailToken}{/link}]]></item>
+{link controller='NotificationUnsubscribe' isEmail=true}eventID={@$event->eventID}&userID={@$mailbox->getUser()->userID}&token={@$mailbox->getUser()->notificationMailToken}{/link}]]></item>
 		<item name="wcf.user.notification.mail.html.intro"><![CDATA[<h2>Dear {$mailbox->getUser()->username},</h2>]]></item>
 		<item name="wcf.user.notification.mail.html.outro"><![CDATA[<p>This is an automatic notification, <b>please do not reply to this email</b>!</p>
 
 <p>Visit your <a href="{link controller='NotificationSettings' isHtmlEmail=true}{/link}">notification settings</a> to configure
 your notifications on <a href="{link isHtmlEmail=true}{/link}">{PAGE_TITLE|language}</a> as you wish.</p>
 
-<p>You can <a href="{link controller='NotificationDisable' isHtmlEmail=true}eventID={@$event->eventID}&userID={@$mailbox->getUser()->userID}&token={@$mailbox->getUser()->notificationMailToken}{/link}">disable only this type of notification</a> as well.</p>]]></item>
+<p>You can <a href="{link controller='NotificationUnsubscribe' isHtmlEmail=true}eventID={@$event->eventID}&userID={@$mailbox->getUser()->userID}&token={@$mailbox->getUser()->notificationMailToken}{/link}">disable only this type of notification</a> as well.</p>]]></item>
 		<item name="wcf.user.notification.mail.daily.subject"><![CDATA[{if $count == 1}New Notification{else}{#$count} New Notifications{/if}]]></item>
 		<item name="wcf.user.notification.mail.daily.plaintext.intro"><![CDATA[Dear {@$mailbox->getUser()->username},
 
@@ -5061,7 +5096,7 @@ Visit your notification settings [URL:{link controller='NotificationSettings' is
 your notifications on {@PAGE_TITLE|language} [URL:{link isEmail=true}{/link}] as you wish.
 
 If you wish to disable all email notifications you can do so by visiting:
-{link controller='NotificationDisable' isEmail=true}userID={@$mailbox->getUser()->userID}&token={@$mailbox->getUser()->notificationMailToken}{/link}]]></item>
+{link controller='NotificationUnsubscribe' isEmail=true}userID={@$mailbox->getUser()->userID}&token={@$mailbox->getUser()->notificationMailToken}{/link}]]></item>
 		<item name="wcf.user.notification.mail.daily.html.intro"><![CDATA[<h2>Dear {$mailbox->getUser()->username},</h2>
 
 <p>You currently have {#$notifications|count} unread notification{if $notifications|count != 1}s{/if} older than 24 hours:</p>]]></item>
@@ -5072,10 +5107,11 @@ If you wish to disable all email notifications you can do so by visiting:
 <p>Visit your <a href="{link controller='NotificationSettings' isHtmlEmail=true}{/link}">notification settings</a> to configure
 your notifications on <a href="{link isHtmlEmail=true}{/link}">{PAGE_TITLE|language}</a> as you wish.</p>
 
-<p>You can <a href="{link controller='NotificationDisable' isHtmlEmail=true}userID={@$mailbox->getUser()->userID}&token={@$mailbox->getUser()->notificationMailToken}{/link}">disable all email notifications</a> as well.</p>]]></item>
+<p>You can <a href="{link controller='NotificationUnsubscribe' isHtmlEmail=true}userID={@$mailbox->getUser()->userID}&token={@$mailbox->getUser()->notificationMailToken}{/link}">disable all email notifications</a> as well.</p>]]></item>
 		<item name="wcf.user.notification.mail.authorList.plaintext"><![CDATA[{if !$event->getAuthor()->userID}{if $guestTimesTriggered > 1}Guests{else}A guest{/if}{else}{@$event->getAuthor()->username} [URL:{link controller='User' object=$event->getAuthor() isEmail=true}{/link}]{/if}{if $count > 1 && $count < 4}{if $count == 2 && !$guestTimesTriggered} and {else}, {/if}{@$authors[1]->username} [URL:{link controller='User' object=$authors[1] isEmail=true}{/link}]{if $count == 3}{if !$guestTimesTriggered} and {else}, {/if}{@$authors[2]->username} [URL:{link controller='User' object=$authors[2] isEmail=true}{/link}]{/if}{elseif $count >= 4}{if $guestTimesTriggered},{else} and{/if} {#$count-1} other users{/if}{if $event->getAuthor()->userID && $guestTimesTriggered} and {if $guestTimesTriggered == 1}a guest{else}{#$guestTimesTriggered} guests{/if}{/if}]]></item>
 		<item name="wcf.user.notification.mail.authorList.html"><![CDATA[{if !$event->getAuthor()->userID}{if $guestTimesTriggered > 1}Guests{else}A guest{/if}{else}<a href="{link controller='User' object=$event->getAuthor() isHtmlEmail=true}{/link}">{$event->getAuthor()->username}</a>{/if}{if $count > 1 && $count < 4}{if $count == 2 && !$guestTimesTriggered} and {else}, {/if}<a href="{link controller='User' object=$authors[1] isHtmlEmail=true}{/link}">{$authors[1]->username}</a>{if $count == 3}{if !$guestTimesTriggered} and {else}, {/if}<a href="{link controller='User' object=$authors[2] isHtmlEmail=true}{/link}">{$authors[2]->username}</a>{/if}{elseif $count >= 4}{if $guestTimesTriggered},{else} and{/if} {#$count-1} other users{/if}{if $event->getAuthor()->userID && $guestTimesTriggered} and {if $guestTimesTriggered == 1}a guest{else}{#$guestTimesTriggered} guests{/if}{/if}]]></item>
 		<item name="wcf.user.notification.stacked.authorList"><![CDATA[{if !$guestTimesTriggered|isset}{assign var=guestTimesTriggered value=0}{/if}{if $count < 4}<strong>{$authors[0]}</strong>{if $count != 1}{if $count == 2 && !$guestTimesTriggered} and {else}, {/if}<strong>{$authors[1]}</strong>{if $count == 3}{if !$guestTimesTriggered} and {else}, {/if} <strong>{$authors[2]}</strong>{/if}{/if}{if $guestTimesTriggered} and {plural value=$guestTimesTriggered one='a guest' other='# guests'}{/if}{else}<strong>{$authors[0]}</strong>{if $guestTimesTriggered},{else} and{/if} {#$others} other users {if $guestTimesTriggered}and {plural value=$guestTimesTriggered one='a guest' other='# guests'}{/if}{/if}]]></item>
+		<item name="wcf.user.notification.mail.jumpToContent"><![CDATA[Jump To Content]]></item>
 		<!-- Notifications -->
 		<item name="wcf.user.notification.com.woltlab.wcf.user"><![CDATA[User Profiles]]></item>
 		<item name="wcf.user.notification.com.woltlab.wcf.user.follow.following"><![CDATA[Notify me of new followers]]></item>
